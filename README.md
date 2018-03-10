@@ -1,3 +1,40 @@
+# Test Notes
+* Bootstrap used, mostly for convenience/speed. 
+* Updated User model, but did not set a type fod ID, since wasn't sure if int, guid or some other type was preferred.
+* Typically I use _variableName for private variables, but I changed to follow your lower camelCase convention. Does Modus have an internal style guide?
+
+## Current
+* 
+
+## TODO
+* Create a lazy loaded page for Users list. Name it \'users-list\' component while creating.\n
+   Use https://randomuser.me/' to get the 20 users and display them in a list on the page.
+   The properties to be shown in the list items should be:
+   First Name, Last Name, Email, Phone
+
+* When the user list is created, upon clicking of any user item, the app should navigate to
+   the user detail page (name it 'user-detail' component). This user details page would be dynamic.
+   I.e. the url should contain the user id while navigating to the user detail page.
+   There should be a back button on the user detail page so the end-user can go back to the user listing page.
+   The properties to show on the user details are:
+   Picture, First Name, Last Name, Email, Phone
+
+*  The HOME page currently has two components, 'app-header' and 'app-content'.
+   User can login from each of the two components but the state in these components are not synced.
+   I.e. if the user logs in/logs out from the app-header, the app-content doesn't get notified.
+   Go to {{link}} and implement the logic to notify the \'app-header'\n component
+   and the \'app-content\' component when the user logs in and logs out of the app from either of the two components.
+
+* Tests for each service and component method should pass
+
+* do all methods have relevant usage metadata?
+
+* align style
+
+Bonus
+* Redux state
+
+
 # NgExercise
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
@@ -25,3 +62,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+

@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">{{user.firstName}} {{user.lastName}}</div>
+  <div class="panel-footer">
+    <button class="btn btn-primary" (click)="onBack()">Back</button>
+  </div>
+  <div style="float:left">
+    <table class="table">
+      <tr>
+        <td>First Name:</td>
+        <td>{{user.firstName}}</td>
+      </tr>
+      <tr>
+        <td>Last Name: </td>
+        <td>{{user.lastName}}</td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <td>Phone: </td>
+        <td>{{user.phone}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
