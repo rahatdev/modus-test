@@ -1,24 +1,24 @@
 <ng-e-app-header></ng-e-app-header>
-
-<div class="table-responsive">
-  <table class="table" *ngIf="users && users.length; else noUsersMessage">
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="hover" *ngFor="let user of users" (click)="navigateToUserDetail(user.id)">
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.phone}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <ng-template #noUsersMessage>No users available.</ng-template>
-  <button class="btn btn-primary" (click)="update()">Test</button>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table" *ngIf="users && users.length; else noUsersMessage">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover" *ngFor="let user of users" (click)="navigateToUserDetail(user.id)">
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noUsersMessage>No users available.</ng-template>
+  </div>
 </div>

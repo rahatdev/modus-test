@@ -9,13 +9,15 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 
-import { UserService } from './user/user.service';
+import { UserService } from './core/services/user.service';
 import { UsersListComponent } from './user/users-list.component';
 import { UserDetailComponent } from './user/user-detail.component';
 
 import { NgReduxModule, NgRedux } from 'ng2-redux';
 import { IAppState, store} from './core/store';
 import { UserActions} from './user/user.actions';
+import { AuthActions } from './core/store/auth.actions';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { UserActions} from './user/user.actions';
   ],
   providers: [ 
     UserService,
-    UserActions
+    UserActions,
+    AuthActions
    ],
   bootstrap: [AppComponent]
 })
