@@ -13,6 +13,10 @@ import { UserService } from './user/user.service';
 import { UsersListComponent } from './user/users-list.component';
 import { UserDetailComponent } from './user/user-detail.component';
 
+import { NgReduxModule, NgRedux } from 'ng2-redux';
+import { IAppState, store} from './core/store';
+import { UserActions} from './user/user.actions';
+
 
 @NgModule({
   declarations: [
@@ -26,9 +30,17 @@ import { UserDetailComponent } from './user/user-detail.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    NgReduxModule
   ],
-  providers: [ UserService ],
+  providers: [ 
+    UserService,
+    UserActions
+   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(ngRedux: NgRedux<IAppState>){
+    ngRedux.provideStore(store);
+  }
+}

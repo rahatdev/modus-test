@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../core/models/user.model';
+import { UserActions } from './user.actions';
+
 
 @Component({
   selector: 'ng-e-user-detail',
@@ -12,19 +14,14 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userActions: UserActions
   ) { }
 
   ngOnInit() {
+    console.log('user-detail on onit called.')
     let id = +this.route.snapshot.paramMap.get('id');
-    //get user by id from state
-    this.user = {
-      id: id,
-      firstName: "None",
-      lastName: "Yet",
-      email: "test@email.com",
-      phone: "111-111-1111"
-    }
+    this.user = this.userActions.getUserById(id);
   }
 
   onBack():void {

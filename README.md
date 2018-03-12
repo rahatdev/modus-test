@@ -1,7 +1,9 @@
 # Test Notes
 * Bootstrap used, mostly for convenience/speed. 
-* Updated User model, but did not set a type fod ID, since wasn't sure if int, guid or some other type was preferred.
+* Updated User model. I used number for id since ERD or preferred type wasn't available.  GUIDs may be preferred depending on use-case, client, team preference.
 * Typically I use _variableName for private variables, but I changed to follow your lower camelCase convention. Does Modus have an internal style guide?
+* Redux used for state.  This may be overkill without knowing the intended scale of the application, but since the intent of this application is to assess ability, thought it may be relevant.
+
 
 ## Current
 * 

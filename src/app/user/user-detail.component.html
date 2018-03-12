@@ -1,26 +1,45 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">{{user.firstName}} {{user.lastName}}</div>
-  <div class="panel-footer">
+<div class="container">
+  <div class="row">
     <button class="btn btn-primary" (click)="onBack()">Back</button>
   </div>
-  <div style="float:left">
-    <table class="table">
-      <tr>
-        <td>First Name:</td>
-        <td>{{user.firstName}}</td>
-      </tr>
-      <tr>
-        <td>Last Name: </td>
-        <td>{{user.lastName}}</td>
-      </tr>
-      <tr>
-        <td>Email: </td>
-        <td>{{user.email}}</td>
-      </tr>
-      <tr>
-        <td>Phone: </td>
-        <td>{{user.phone}}</td>
-      </tr>
-    </table>
+  <br>
+  <div class="row" *ngIf="user; else noUserMessage">
+    <div class="col-2">
+      <div class="row">
+        <h5>{{user.firstName}} {{user.lastName}}</h5>
+      </div>
+      <div class="row">
+        <img [attr.src]="user.picture.large">
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="panel panel-primary">
+        <div style="float:left">
+          <table class="table">
+            <tr>
+              <td>First Name:</td>
+              <td>{{user.firstName}}</td>
+            </tr>
+            <tr>
+              <td>Last Name: </td>
+              <td>{{user.lastName}}</td>
+            </tr>
+            <tr>
+              <td>Email: </td>
+              <td>
+                <a [attr.href]="'mailto:'+user.email">{{user.email}}</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Phone: </td>
+              <td>{{user.phone}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
   </div>
+  <ng-template #noUserMessage>User Unavailable</ng-template>
+
 </div>

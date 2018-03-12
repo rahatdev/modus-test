@@ -1,5 +1,5 @@
 export interface User {
-  id;  // defined types? int vs GUIDs?
+  id? : number;  
   firstName: string;
   lastName: string;
   email?: string;
