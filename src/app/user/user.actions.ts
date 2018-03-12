@@ -28,9 +28,9 @@ export class UserActions {
                     users
                 })
             });
-            this.isLoaded = true;            
+            this.isLoaded = true;
         } else {
-            this.ngRedux.dispatch({ type: 'Default'});
+            this.ngRedux.dispatch({ type: 'Default' });
         }
     }
 

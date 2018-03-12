@@ -1,7 +1,7 @@
 import { User } from '../models/user.model';
 import { IAppState } from './IAppState';
 import { GET_USERS } from '../../user/user.actions';
-import { USER_LOGIN, USER_LOGOUT} from './auth.actions';
+import { USER_LOGIN, USER_LOGOUT } from './auth.actions';
 
 const users = [];
 
@@ -10,14 +10,21 @@ const initialState: IAppState = {
     userLoggedIn: false
 }
 
-
+/**
+  * @author Rahat Hussain
+  * @desc Lazy loads and updates initial users state.
+  */
 function lazyLoadInitialUsers(state: IAppState, action): IAppState {
     return Object.assign({}, state, {
         users: [...state.users, action.users]
     });
 }
 
-function logStatus(state: IAppState, action){
+/**
+  * @author Rahat Hussain
+  * @desc Updates user log status state.
+  */
+function logStatus(state: IAppState, action) {
     return Object.assign({}, state, {
         userLoggedIn: action.userLoggedIn
     })

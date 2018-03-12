@@ -9,16 +9,24 @@ export const USER_LOGOUT = 'auth/logout';
 export class AuthActions {
     constructor(
         private ngRedux: NgRedux<IAppState>
-    ){}
+    ) { }
 
-    userLogin(){
+    /**
+    * @author Rahat Hussain
+    * @desc Updates state on user login
+    */
+    userLogin() {
         this.ngRedux.dispatch({
             type: USER_LOGIN,
             userLoggedIn: true
         })
     }
 
-    userLogout(){
+    /**
+    * @author Rahat Hussain
+    * @desc Updates state on user logout
+    */
+    userLogout() {
         this.ngRedux.dispatch({
             type: USER_LOGOUT,
             userLoggedIn: false

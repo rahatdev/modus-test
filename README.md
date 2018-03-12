@@ -6,7 +6,7 @@
 * Redux used for state.  This may be overkill without knowing the intended scale of the application, but since the intent of this application is to assess ability, thought it may be relevant.
 * For task 3, the redux actions should really call an auth service, but since there is no authentication logic or tokens etc, the auth.service.ts is just a placeholder for now.  
 * In the interest of time and considering the intent of this exercise is to assess ability, test were written only for user.service & user-detail.component.
-
+* Folder structure - since user-detail and users-list were related, they were put in the same folder. Also I typically follow the general rule of flat structure until >7 files in a folder of related domain objects. This is of course entirely dependant on Modus' project folder structure guide and preferences, but jsut wanted to clarify my thinking.
 
 
 ==================  stock ng-cli readme below ======================
