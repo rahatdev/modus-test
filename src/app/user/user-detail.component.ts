@@ -24,7 +24,11 @@ export class UserDetailComponent implements OnInit {
     this.user = this.userActions.getUserById(id);
   }
 
-  onBack():void {
+  /**
+   * @author Rahat Hussain
+   * @desc Navigates back to users-list 
+   */
+  onBack(): void {
     this.router.navigate(['./users'])
   }
 

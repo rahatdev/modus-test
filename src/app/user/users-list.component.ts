@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../core/models/user.model';
 import { NgRedux, select } from 'ng2-redux';
@@ -30,12 +30,11 @@ export class UsersListComponent implements OnInit {
     this.userActions.getUsers();
   }
 
+  /**
+   * @author Rahat Hussain
+   * @desc Navigates to user-detail for selected user.
+   */
   navigateToUserDetail(userid) {
     this.router.navigate(['/user/' + userid]);
   }
-
-  log(message) {
-    console.log(message);
-  }
-
 }

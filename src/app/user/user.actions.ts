@@ -16,6 +16,10 @@ export class UserActions {
         private userService: UserService
     ) { }
 
+    /**
+   * @author Rahat Hussain
+   * @desc Action for initializing and updating users state
+   */
     getUsers() {
         if (!this.isLoaded) {
             const getUsersSubscription = this.userService.getUsers().subscribe(users => {
@@ -28,10 +32,12 @@ export class UserActions {
         } else {
             this.ngRedux.dispatch({ type: 'Default'});
         }
-
-
     }
 
+    /**
+   * @author Rahat Hussain
+   * @desc Returns a user by id from users in current state.
+   */
     getUserById(id) {
         return this.ngRedux.getState().users.find((user) => user.id == id)
     }

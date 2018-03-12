@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserDetailComponent } from './user-detail.component';
-import { UserService } from '../core/services/user.service';
+import { UserActions } from './user.actions';
 
 describe('UserDetailComponent', () => {
   let component: UserDetailComponent;
-  let service: UserService;
+  let actions: UserActions;
   let fixture: ComponentFixture<UserDetailComponent>;
 
   beforeEach(async(() => {
@@ -19,6 +19,8 @@ describe('UserDetailComponent', () => {
     fixture = TestBed.createComponent(UserDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    component = new UserDetailComponent(null, null, actions);
   });
 
   it('should create', () => {
