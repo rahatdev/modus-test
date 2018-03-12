@@ -9,19 +9,27 @@ export const GET_USERS = 'user/GET_USERS';
 
 @Injectable()
 export class UserActions {
+    private isLoaded = false;
+
     constructor(
         private ngRedux: NgRedux<IAppState>,
         private userService: UserService
     ) { }
 
     getUsers() {
-        this.userService.getUsers()
-            .subscribe(users => {
+        if (!this.isLoaded) {
+            const getUsersSubscription = this.userService.getUsers().subscribe(users => {
                 this.ngRedux.dispatch({
                     type: GET_USERS,
                     users
                 })
             });
+            this.isLoaded = true;            
+        } else {
+            this.ngRedux.dispatch({ type: 'Default'});
+        }
+
+
     }
 
     getUserById(id) {

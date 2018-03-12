@@ -17,8 +17,8 @@ export class UserService {
     if (this.users.length == 0) { //initialize list once
       return this.getListOfRandomUsers(20);
     } else {
-      return new Observable<User>((observer) => {
-        this.users.forEach(user => observer.next(user));
+      return new Observable<User>((observer) => {  // return null if state already initialized
+       //this.users.forEach(user => observer.next(user));
         observer.complete();
       })
     }
