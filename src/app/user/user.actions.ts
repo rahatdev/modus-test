@@ -37,6 +37,8 @@ export class UserActions {
     /**
    * @author Rahat Hussain
    * @desc Returns a user by id from users in current state.
+   * 
+   * @return User from state
    */
     getUserById(id) {
         return this.ngRedux.getState().users.find((user) => user.id == id)
