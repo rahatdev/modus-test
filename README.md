@@ -1,27 +1,15 @@
 # Notes
+
 * Bootstrap used, mostly for convenience/speed. 
-* Updated User model. I used number for id since ERD or preferred type wasn't available.  GUIDs may be preferred depending on use-case, client & team preference.
-* Typically I use _variableName for private variables, but I changed to follow your lower camelCase convention. Does Modus have an internal style guide?
+* Updated User model. I used number type for id since ERD or preferred type wasn't available.  GUIDs may be preferred depending on use-case, client & team preference.
+* Typically I use _variableName for class private variables, but I changed to follow your lower camelCase convention. Does Modus have an internal style guide?
 * Redux used for state.  This may be overkill without knowing the intended scale of the application, but since the intent of this application is to assess ability, thought it may be relevant.
 * For task 3, the redux actions should really call an auth service, but since there is no authentication logic or tokens etc, the auth.service.ts is just a placeholder for now.  
+* In the interest of time and considering the intent of this exercise is to assess ability, test were written only for user.service & user-detail.component.
 
 
-## TODO
-*  The HOME page currently has two components, 'app-header' and 'app-content'.
-   User can login from each of the two components but the state in these components are not synced.
-   I.e. if the user logs in/logs out from the app-header, the app-content doesn't get notified.
-   Go to {{link}} and implement the logic to notify the \'app-header'\n component
-   and the \'app-content\' component when the user logs in and logs out of the app from either of the two components.
 
-* Tests for each service and component method should pass
-
-* do all methods have relevant usage metadata?
-
-* align style
-
-Bonus
-* Redux state
-
+==================  stock ng-cli readme below ======================
 
 # NgExercise
 

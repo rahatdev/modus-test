@@ -13,6 +13,12 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * @author Rahat Hussain
+   * @desc Returns a list of users as Observable. Currently it retursn a list of 20
+   *       randomly generated users, but in the future this could be pointed to a db/api.
+   * @return Observable<User>
+   */
   getUsers(): Observable<User> {
     if (this.users.length == 0) { //initialize list once
       return this.getListOfRandomUsers(20);
@@ -24,10 +30,18 @@ export class UserService {
     }
   }
 
+   /**
+   * @author Rahat Hussain
+   * @desc Returns a random user from API
+   */
   getRandomUserFromAPI() {
     return this.http.get(this.userAPI);
   }
 
+   /**
+   * @author Rahat Hussain
+   * @desc Generates a list of random users. Takes in number of users as input.
+   */
   getListOfRandomUsers(numberOfUsers): Observable<User> {
     if (numberOfUsers > 0) {
       let randomUsers = new Observable<User>((observer) => {
@@ -58,6 +72,10 @@ export class UserService {
     }
   }
 
+   /**
+   * @author Rahat Hussain
+   * @desc Placeholder for error handling for service.
+   */
   private handleError(err: HttpErrorResponse) {
     console.log(err.message);
     return Observable.throw(err.message);
