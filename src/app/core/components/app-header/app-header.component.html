@@ -3,6 +3,8 @@
     <img alt="Modus Logo" src="assets/images/favicon-196x196.png">
   </div>
   <div class="title" routerLink="/">Modus Create</div>
+  <div class="title" routerLink="/home">Home</div>
+  <div class="title" routerLink="/users">Users List</div>  
   <div class="profile-dropdown" *ngIf="isLoggedIn">
     <div class="initials">
       {{user.firstName.charAt(0)}}{{user.lastName.charAt(0)}}

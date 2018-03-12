@@ -18,14 +18,16 @@ export class AppHeaderComponent implements OnInit {
   constructor(
     private ngRedux: NgRedux<IAppState>,
     private authActions: AuthActions
-  ) { }
-
-  ngOnInit() {
-    // this.isLoggedIn = false;    
+  ) {
     this.ngRedux.subscribe(() => {
       let store = this.ngRedux.getState();
       this.isLoggedIn = store.userLoggedIn;
-    })
+    });
+  }
+
+  ngOnInit() {
+    // this.isLoggedIn = false;  
+    this.isLoggedIn = this.ngRedux.getState().userLoggedIn; 
   }
 
   /**

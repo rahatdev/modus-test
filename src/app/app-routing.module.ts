@@ -20,7 +20,7 @@ const routes: Routes = [{
 },
 {
   path: '**',
-  redirectTo: 'users'
+  redirectTo: 'landing'
 }];
 
 @NgModule({
